@@ -1,6 +1,7 @@
 import React,{useState,useContext} from 'react'
 import Input from './Inputs'
 import { Link,Outlet } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 // import { AuthenticationStatus } from './App'
 // import {
 //     GoogleReCaptchaProvider,
@@ -114,9 +115,11 @@ function Signup(){
 
     return (
         <div className='auth'>
+       
         <h2>Start Here</h2>
+        
         <p>Unlock a World of Endless Possibilities at Our Ecommerce Hub</p>
-        <form id="contactform" onSubmit={handleSubmit}>
+        <form id="contactform" onSubmit={handleSubmit} action='create'>
          <table>
          <Input label='Name' type='text'  onChange={(e:any)=>setName(e.target.value)}  error={nameError}/>
          <Input label='Email' onChange={(e:any)=>setEmail(e.target.value)} star={true} type='text' error={emailError}/>

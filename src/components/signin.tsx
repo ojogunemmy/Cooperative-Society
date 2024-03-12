@@ -2,8 +2,8 @@ import React,{useState,useContext} from 'react'
 import { Link,Outlet } from 'react-router-dom'
 import Input from './Inputs'
 import { UseAppDispatch,UseAppSelector } from './app/hooks'
-import { RootState } from './app/store'
-import { increment } from './app/features/counterSlice'
+// import { RootState } from './app/store'
+// import { increment } from './app/features/sideSlice'
 
 
 
@@ -19,7 +19,7 @@ interface entries{
 
 
 function Signin(){
-    const value = UseAppSelector((state:RootState ) => state.counter.value)
+    // const value = UseAppSelector((state:RootState ) => state.counter.value)
     const dispatch = UseAppDispatch()
     const [token,setToken] = useState('')
     // const {isLoggedIn,setIsLoggedIn} = useContext(AuthenticationStatus)
@@ -77,7 +77,7 @@ function Signin(){
     const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
 
-        dispatch(increment())
+        // dispatch(increment())
        
         console.log({
             token:token,

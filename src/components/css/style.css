@@ -350,6 +350,11 @@ h1 small {
 	border:0;
 	width: 100%;
 }
+.sideBar{
+	visibility: hidden;
+	height: 0;
+	width: 0;
+}
 .FBG img.link {
 	margin:10px auto;
 	padding:0;
@@ -514,7 +519,7 @@ h1 small {
 	width:100%;
 	border:1px solid #c0c0c0;
 	margin:2px 0;
-	padding:5px 2px;
+	padding: 5px;
 	height:30px;
 	background:#fff;
 	float:left;
@@ -524,7 +529,7 @@ h1 small {
 	width:100%;
 	border:1px solid #c0c0c0;
 	margin:2px 0;
-	padding:2px;
+	padding:5px;
 	background:#fff;
 	float:left;
 }
@@ -595,6 +600,7 @@ p.response {
 		opacity: 0.2;
 		z-index: -1;
 	}
+	
 
 	.header h2.bigtext {
 		margin:0;
@@ -605,6 +611,11 @@ p.response {
 		top: 0px;
 		z-index: 1;
 		position: relative;
+	}
+	.sideBar{
+		visibility: visible;
+		height: fit-content;
+		width: fit-content;
 	}
 	
 	
@@ -640,6 +651,11 @@ p.response {
 		top: 0px;
 		z-index: 1;
 		position: relative;
+	}
+	.sideBar{
+		visibility: visible;
+		height: fit-content;
+		width: fit-content;
 	}
 	
 }
@@ -689,5 +705,10 @@ p.response {
 		top: 0px;
 		z-index: 1;
 		position: relative;
+	}
+	.sideBar{
+		visibility: visible;
+		height: fit-content;
+		width: fit-content;
 	}
 }

@@ -7,7 +7,7 @@ import { inherits } from "util";
 
 
 function Header(props:any){
-  const value = UseAppSelector((state:RootState ) => state.counter.value)
+  // const value = UseAppSelector((state:RootState ) => state.counter.value)
   const page = UseAppSelector((state:RootState ) => state.page.page)
   const dispatch = UseAppDispatch()
 
@@ -31,7 +31,7 @@ function Header(props:any){
               <Link className="nav-link active" aria-current="page" to={"/"} onClick={() =>dispatch(setPage("Home"))}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/services" onClick={() =>dispatch(setPage("Services"))}> Services</Link>
+              <Link className="nav-link" to={`/services`} onClick={() =>dispatch(setPage("Services"))}> Services</Link>
             </li>
               {/* <li className="nav-item dropdown">
        <a className="nav-link dropdown-toggle" href="i" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,6 +46,9 @@ function Header(props:any){
      </li> */}
      <li className="nav-item">
        <Link className="nav-link" to="/aboutUs" onClick={() =>dispatch(setPage("About"))}> About Us</Link>
+     </li>
+     <li className="nav-item sideBar">
+       <Link className="nav-link" to="/Section" onClick={() =>dispatch(setPage("Section"))}> Section </Link>
      </li>
      <li className="nav-item">
        <Link className="nav-link" to="/contactUs" onClick={() =>dispatch(setPage("Contact"))}> Contact Us</Link>
