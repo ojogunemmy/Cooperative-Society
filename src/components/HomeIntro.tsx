@@ -10,12 +10,13 @@ function HomeIntro(){
     return(
         <div className="container-fluid main" style={value==="Home"?{visibility:"visible"}:{display:"none"}}>
         <div className="row header">
-         <h2 className="col-12 col-md-12 col-lg-6 col-xl-6 bigtext"><span>Big Solutions for a small planet</span><br />
-         Think different. Advanced<br />
-         made simple.</h2>
+         <h2 className="col-12 col-md-12 col-lg-6 col-xl-6 bigtext"><span>Discover the boundless possibilities of academia through</span><br />
+         Academic Alliance Association<br />
+         </h2>
          <SVGShape01/>
         </div>
         </div>
+ 
     )
 }
 

@@ -1,7 +1,8 @@
 import React,{useState,useContext} from 'react'
-import { Link,Outlet } from 'react-router-dom'
+import { Link,Outlet, useNavigate } from 'react-router-dom'
 import Input from './Inputs'
 import { UseAppDispatch,UseAppSelector } from './app/hooks'
+import { getItem, setItem } from './app/features/localstorageSlice'
 // import { RootState } from './app/store'
 // import { increment } from './app/features/sideSlice'
 
@@ -20,6 +21,9 @@ interface entries{
 
 function Signin(){
     // const value = UseAppSelector((state:RootState ) => state.counter.value)
+
+    const item = UseAppSelector((state) => state.storage.getItem)
+    const navigate = useNavigate()
     const dispatch = UseAppDispatch()
     const [token,setToken] = useState('')
     // const {isLoggedIn,setIsLoggedIn} = useContext(AuthenticationStatus)
@@ -77,7 +81,18 @@ function Signin(){
     const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
 
-        // dispatch(increment())
+        Verification({
+            token:token,
+            email:email,
+            password:password
+
+        })
+
+
+
+        dispatch(getItem("signup"))
+
+
        
         console.log({
             token:token,
@@ -86,12 +101,32 @@ function Signin(){
 
         })
 
-        Verification({
-            token:token,
-            email:email,
-            password:password
+        const data:entries = JSON.parse(item)
 
-        })
+        
+        if(data.email === email && data.password === password ){
+
+            const sign:entries = JSON.parse(item)
+            sign.token = '1kqwjkmedwasdkasdnjasj'
+            dispatch(setItem({key:"signup", value:JSON.stringify(sign)}))
+            navigate("/")
+
+        }else{
+            if(data.email !== email){
+                setEmailError("Check your email")
+            }else{
+                setPasswordError("password does not match")
+            }
+        }
+
+
+
+
+        
+
+      
+
+
         // setIsLoggedIn({name:'emco',id:'ksdkjsksdks',status:true})
     }
     
@@ -103,9 +138,8 @@ function Signin(){
     return (
         <div className='auth'>
         
-        <h2>Hand Shake</h2>
-        <p> Morbi tincidunt, orci ac convaltrs atrquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla vetrt magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing etrt. Donec trbero. </p>
-
+        <h2>Get started</h2>
+         <p></p>
         <form id="contactform" onSubmit={handleSubmit}>
         {/* <h3>Experience a World of Endless Possibilities at Our Ecommerce Hub</h3> */}
         <table>
@@ -118,7 +152,7 @@ function Signin(){
        
        
         <tr className="buttons">
-        <td><input type="submit" name="imageField" id="imageField"  value="Send message" className="send"/></td>
+        <td><input type="submit" name="imageField" id="imageField"  value="Signin" className="send"/></td>
         <td><label className='mt-2 w-100'>Don't have an account? <Link to='/Signup' ><span>Create one.</span></Link></label></td>
         </tr>
        

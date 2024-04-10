@@ -231,6 +231,20 @@ h1 small {
 	margin:5px 0 10px 10px;
 	line-height:1.6em;
 }
+.body li {
+	font:normal 19px "Times New Roman", Times, serif;
+	color:#575656;
+	padding:3px 0 3px 0;
+	margin:5px 0 10px 10px;
+	line-height:1.6em;
+}
+.body ul {
+	font:normal 19px "Times New Roman", Times, serif;
+	color:#575656;
+	padding:3px 0 3px 0;
+	margin:5px 0 10px 10px;
+	line-height:1.6em;
+}
 .body p span {
 	font:bold 14px "Times New Roman", Times, serif;
 	color:rgba(251, 168, 31, 1);
@@ -404,6 +418,10 @@ h1 small {
 	float:left;
 	padding:10px 15px;
 	margin:0;
+}
+.FBG .blok .link {
+	color:#585858 !important;
+
 }
 .footer_resize {
 	margin:0 auto;

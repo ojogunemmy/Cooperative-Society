@@ -9,7 +9,7 @@ function Sidenav(){
     return(
         <div className={'col-12 col-md-4 col-sm-4 body mt-3 sidenav '}>
         
-        <h2>Sidebar Menu</h2>
+        <h2>Suggestions</h2>
             <ul>
               <li><a href="i">Home</a></li>
               <li><a href="i">TemplateInfo</a></li>
@@ -18,7 +18,7 @@ function Sidenav(){
               <li><a href="i">Archives</a></li>
             </ul>
             <div className="bg"></div>
-            <h2>Sponsors</h2>
+            {/* <h2>Sponsors</h2>
             <ul className="sponsors">
               <li className="sponsors"><a href="i">Lorem ipsum dolor</a><br />
                 Donec libero. Suspendisse bibendum</li>
@@ -33,7 +33,7 @@ function Sidenav(){
               <li className="sponsors"><a href="i">Donec mattis</a><br />
                 purus nec placerat bibendum</li>
             </ul>
-            <div className="bg"></div>
+            <div className="bg"></div> */}
             <h2>Search</h2>
             <div className="search">
               <form id="form1" name="form1" method="post" action="i">

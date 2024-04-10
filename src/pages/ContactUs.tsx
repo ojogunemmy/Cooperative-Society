@@ -6,7 +6,7 @@ const ContactUs = ()=>{
         <div className="body">
    
         <h2>Contact</h2>
-        <p> Morbi tincidunt, orci ac convaltrs atrquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla vetrt magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing etrt. Donec trbero. </p>
+        <p> Cultivating Connections: Reach out to us today to join our academic community, collaborate on initiatives, or inquire about our services. Let's embark on a journey of knowledge together! </p>
         <form action="#" method="post" id="contactform">
           <table >
            

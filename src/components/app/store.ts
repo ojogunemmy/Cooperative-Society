@@ -1,17 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import sideReducer from "./features/sideSlice"
 import PageReducer from "./features/pageSlice";
-import signupReducer from "./features/signupSlice";
-import signinReducer from "./features/signinSlice"
 import authReducer from "./features/authSlice";
+import StorageSlice from "./features/localstorageSlice";
 
 
 const store = configureStore({
     reducer: {
        sidebar: sideReducer.reducer,
+       storage: StorageSlice.reducer,
        page: PageReducer.reducer,
-       signup: signupReducer.reducer,
-       signin: signinReducer.reducer,
        authenticated: authReducer.reducer,
        
     }

@@ -22,7 +22,9 @@ function App() {
     <Router> 
       <div className='container-fluid'>
       <Header/>
-        <div className='container-xl'>
+      <div className='container-lg'>
+
+        
       
       <HomeIntro/>
 
@@ -30,8 +32,8 @@ function App() {
 
        <div className='container-fluid '>
        <div className="row align-items-start">
-       <Sidenav/>
-        <div className='col-12 col-md-8 col-sm-8 mt-3'>
+       {/* <Sidenav/> */}
+        <div className='col-12 col-md-12 col-sm-12 mt-3'>
        
            <Routes>
              <Route path='/' element={<HomePage/>}></Route>

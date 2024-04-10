@@ -1,7 +1,10 @@
-import React,{useState,useContext} from 'react'
+import React,{useState} from 'react'
 import Input from './Inputs'
-import { Link,Outlet } from 'react-router-dom'
+import { Link,Outlet, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import { UseAppDispatch, UseAppSelector } from './app/hooks'
+import { getItem, setItem } from './app/features/localstorageSlice'
+import { verify } from 'crypto'
 // import { AuthenticationStatus } from './App'
 // import {
 //     GoogleReCaptchaProvider,
@@ -9,7 +12,7 @@ import { Helmet } from 'react-helmet'
 //   } from 'react-google-recaptcha-v3';
 
 
-interface entries{
+export interface entries{
 
     token:string,
     name:string,
@@ -23,47 +26,59 @@ interface entries{
 
 
 function Signup(){
+    const dispatch = UseAppDispatch()
+    const item = UseAppSelector((state) => state.storage.getItem)
 
     const [token,setToken] = useState('')
+    const navigate = useNavigate()
+
+     //Errors state
+     const [tokeError,setTokenError] = useState('')
+     const [nameError,setNameError] = useState('')
+     const [emailError,setEmailError] = useState('')
+     const [passwordError,setPasswordError] = useState('')
+     const [confirmPasswordError,setConfirmPasswordError] = useState('')
     // const {isLoggedIn,setIsLoggedIn} = useContext(AuthenticationStatus)
     const [name,setName] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [confirmPassword,setComfirmPassword] = useState('')
 
-    //Errors state
-    const [tokeError,setTokenError] = useState('')
-    const [nameError,setNameError] = useState('')
-    const [emailError,setEmailError] = useState('')
-    const [passwordError,setPasswordError] = useState('')
-    const [confirmPasswordError,setConfirmPasswordError] = useState('')
-    function Verification(value:entries){
+   
+
+    const verify = (value:entries) =>{
          // Name check
-        if(value.name === ''){
-            setNameError('Enter a name')
+        if(value.name !== ''){
+            setNameError('')
 
         }else{
-            setNameError('')
+            setNameError('Enter a name')
+
         }
         
         // Email Check
-        if(value.email === ''){
-            setEmailError('No Email Entered')
+        if(value.email !== ''){
+            setEmailError('')
 
         }else{
-            setEmailError('')
+
+            setEmailError('No Email Entered')
+
+            
         }
 
         // PassWord check
-        if(value.password === ''){
-            setPasswordError('Enter your Password ')
+        if(value.password !== ''){
+
+            setPasswordError('')
+           
 
         }else{
-            setPasswordError('')
+            setPasswordError('Enter your Password ')
         }
 
          // Comfirm Passwod check
-         if(value.confirmPassword !== value.password){
+        if(value.confirmPassword !== value.password){
             setConfirmPasswordError('Confirm password does not match ')
 
         }else{
@@ -82,29 +97,41 @@ function Signup(){
 
     const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
        e.preventDefault()
-        console.log({
-        token:token,
-        name:name,
-        email:email,
-        password:password,
-        confirmPassword:confirmPassword
-
-       })
-
-       Verification({
-        token:token,
-        name:name,
-        email:email,
-        password:password,
-        confirmPassword:confirmPassword
-
-       })
        
-       setTimeout(()=>{
 
-        setToken('')
+       const signupdata:entries = {
+        token:token,
+        name:name,
+        email:email,
+        password:password,
+        confirmPassword:confirmPassword
+
+       }
+       
+       verify(signupdata)
+
+        console.log(signupdata)
+
+
+       if(email !== '' && name !== '' && password !== '' &&  confirmPassword === password){
+        const data = JSON.stringify(signupdata)
+        dispatch(getItem("signup"))
+        // console.log(item?.toString())
+ 
+        dispatch(setItem({key:"signup",value:data}))
+        navigate("/signin")
         
-       },10000)
+       }else{
+        verify(signupdata)
+       }
+       
+
+       
+    //    setTimeout(()=>{
+
+    //     setToken('')
+        
+    //    },10000)
     
     }
 
@@ -113,12 +140,12 @@ function Signup(){
     
     }
 
+
     return (
         <div className='auth'>
        
         <h2>Start Here</h2>
         
-        <p>Unlock a World of Endless Possibilities at Our Ecommerce Hub</p>
         <form id="contactform" onSubmit={handleSubmit} action='create'>
          <table>
          <Input label='Name' type='text'  onChange={(e:any)=>setName(e.target.value)}  error={nameError}/>

@@ -8,13 +8,50 @@ const AboutUS = ()=>{
         <>
      <div className="body">
         <h2>About Us</h2>
-        <img src={pic1} alt="" width="89" height="78" className="floated" />
-        <p><span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. </span><br />
-          Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero.
-        <img src={pic2} alt="" width="89" height="82" className="floated" />
+        {/* <img src={pic1} alt="" width="89" height="78" className="floated" /> */}
+        <p><span> Welcome to the Academic Alliance Association, </span><br />
+       A dynamic community dedicated to fostering academic excellence, collaboration, and innovation. Established with the vision of advancing education and research, our association brings together scholars, educators, and students from diverse disciplines to create a vibrant ecosystem of learning and discovery.
+
+        At the heart of our mission is a commitment to empowering individuals and institutions to reach their full potential. Through our extensive range of services and programs, we strive to provide the support, resources, and opportunities needed to thrive in today's academic landscape.      
+        {/* <img src={pic2} alt="" width="89" height="82" className="floated" /> */}
         </p>
-        <p><span>Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 2000 years old.</span><br />
-          Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classNameical literature, discovered the undoubtable source. orem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
+        <h2>Our Mission</h2>
+        <p>
+          <span> Empowering academic excellence and innovation through inclusive collaboration and impactful engagement. </span>
+          <br />
+        
+          The Academic Alliance Association is committed to promoting academic excellence, fostering interdisciplinary collaboration, and advancing knowledge for the betterment of society. We believe in the transformative power of education and research to drive positive change and create a brighter future for all.
+        </p>
+        <h2>What We Do</h2>
+        <p>
+          <span>Our mission is to support academic growth through comprehensive research assistance, professional development opportunities, community engagement initiatives, mentorship programs, and educational outreach efforts</span>
+        </p>
+        <ul>
+          <li><strong>Research Support:</strong> We provide comprehensive support for research endeavors, offering resources, funding opportunities, and mentorship to researchers at all stages of their careers.</li>
+          
+          <li><strong>Professional Development:</strong> We offer a variety of professional development programs, workshops, and seminars to help scholars and educators enhance their skills, expand their networks, and stay abreast of the latest trends and developments in their fields.</li>
+          
+          <li><strong>Community Engagement:</strong> We facilitate networking events, conferences, and collaborative projects that bring together members of the academic community to share ideas, exchange knowledge, and foster interdisciplinary collaborations.</li>
+          
+          <li><strong>Mentorship Programs:</strong> We pair experienced scholars and educators with students and early-career researchers through mentorship programs designed to provide guidance, support, and encouragement as they navigate their academic journeys.</li>
+          
+          <li><strong>Educational Outreach:</strong> We engage with local schools, community organizations, and underserved populations to promote access to quality education and inspire a love for learning through guest lectures, classroom workshops, and scholarship opportunities.</li>
+        </ul>
+
+        <h2>Our Values</h2>
+        <p><span>Striving for excellence through diversity, collaboration, and impact.</span></p>
+        <ul>
+          <li><strong>Excellence:</strong> We are committed to upholding the highest standards of academic rigor, integrity, and excellence in all that we do.</li>
+          
+          <li><strong>Inclusivity:</strong> We embrace diversity and foster an inclusive environment where individuals from all backgrounds feel valued, respected, and empowered to contribute.</li>
+          
+          <li><strong>Collaboration:</strong> We believe in the power of collaboration and interdisciplinary exchange to drive innovation, solve complex problems, and create positive change.</li>
+          
+          <li><strong>Impact:</strong> We are dedicated to making a meaningful impact in the world through education, research, and community engagement.</li>
+        </ul>
+
+
+
         </div>
       <div className="bg"></div>
       

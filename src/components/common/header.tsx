@@ -4,11 +4,13 @@ import { UseAppDispatch,UseAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
 import { setPage } from "../app/features/pageSlice";
 import { inherits } from "util";
+import { entries } from "../Signup";
 
 
 function Header(props:any){
   // const value = UseAppSelector((state:RootState ) => state.counter.value)
   const page = UseAppSelector((state:RootState ) => state.page.page)
+  // const item:entries = JSON.parse(UseAppSelector((state) => state.storage.getItem))
   const dispatch = UseAppDispatch()
 
   
@@ -17,9 +19,9 @@ function Header(props:any){
      <nav className="navbar navbar-expand-lg bg-body-tertiary fh">
         <div className="container-fluid">
          <div className="navbar-brand">
-         <h1 className="p-0"><Link to={"/"} onClick={() =>dispatch(setPage("Home"))} ><small>think different</small>
+         <h1 className="p-0"><Link to={"/"} onClick={() =>dispatch(setPage("Home"))} ><small>Academic Alliance</small>
          <br />
-           greenpeace.</Link></h1>
+           Association</Link></h1>
        </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -47,15 +49,12 @@ function Header(props:any){
      <li className="nav-item">
        <Link className="nav-link" to="/aboutUs" onClick={() =>dispatch(setPage("About"))}> About Us</Link>
      </li>
-     <li className="nav-item sideBar">
-       <Link className="nav-link" to="/Section" onClick={() =>dispatch(setPage("Section"))}> Section </Link>
-     </li>
      <li className="nav-item">
        <Link className="nav-link" to="/contactUs" onClick={() =>dispatch(setPage("Contact"))}> Contact Us</Link>
      </li>
         </ul>
             <div className="navbar-text span">
-            <Link className="nav-link " style={{backgroundColor:'inherit',color:"inherit"}} to="/signup" onClick={() =>dispatch(setPage("Login"))}> <span>Become a Member</span></Link>
+            <Link className="nav-link " style={{backgroundColor:'inherit',color:"inherit"}} to="/signup" onClick={() =>dispatch(setPage("signin"))}> {<span>Become a Member</span>}</Link>
             </div>
           </div>
         </div>
